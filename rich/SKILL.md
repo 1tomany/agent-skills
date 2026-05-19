@@ -1,5 +1,5 @@
 ---
-name: rich
+name: RICH
 description: Manages RICH modules in modern Symfony applications. Use when asked to understand the RICH architecture, create a RICH module, or to create the RICH Input, Command, and Handler classes.
 ---
 

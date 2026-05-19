@@ -4,7 +4,11 @@ Skills for our AI agents.
 
 ## Installation
 
-More to come.
+```bash
+cd $HOME
+mkdir -p $HOME/.agents/skills
+git clone git@github.com:1tomany/agent-skills.git $HOME/.agents/skills/1tomany
+```
 
 ## Credits
 

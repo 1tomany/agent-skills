@@ -1,8 +1,8 @@
-# Symfony AI Documentation
+# Symfony AI documentation
 
 Use official [Symfony documentation](https://symfony.com/doc) first. Browse the relevant pages at task time because provider names, model examples, and configuration keys may change.
 
-## Core Pages
+## Core pages
 
 - [Symfony AI overview](https://symfony.com/doc/current/ai/index.html): Start here for component boundaries: Platform, Agent, Chat, Store, Mate, AI Bundle, MCP Bundle.
 - [Platform component](https://symfony.com/doc/current/ai/components/platform.html): Use for direct provider factories, model capabilities, messages, streaming, multimodal input, embeddings, structured output, and `InMemoryPlatform` testing.
@@ -11,7 +11,7 @@ Use official [Symfony documentation](https://symfony.com/doc) first. Browse the 
 - [Store component](https://symfony.com/doc/current/ai/components/store.html): Use for vector stores and RAG persistence.
 - [Chat component](https://symfony.com/doc/current/ai/components/chat.html): Use for conversation persistence and chat-oriented APIs.
 
-## Verification Checklist
+## Verification checklist
 
 - Confirm the installed Symfony AI packages and versions in `composer.json`.
 - Confirm whether this app uses `symfony/ai-bundle`, standalone components, or custom vendor clients.

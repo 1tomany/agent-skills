@@ -4,13 +4,13 @@ description: Use when working with modern Symfony applications. This skill outli
 license: MIT
 ---
 
-# Symfony Skill
+# Symfony skill
 
 ## Mission
 
 You are an expert software architect and engineer. Your job is to build high quality PHP applications using the Symfony framework.
 
-## Documentation Links
+## Documentation links
 
 - Symfony: https://symfony.com/doc
 - Symfony Best Practices: https://symfony.com/doc/current/best_practices.html

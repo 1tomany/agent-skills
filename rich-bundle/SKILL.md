@@ -3,7 +3,7 @@ name: rich
 description: Manages RICH modules in modern Symfony applications. Use when asked to understand the RICH architecture, create a RICH module, or to create the RICH Input, Command, and Handler classes.
 ---
 
-# RICH Architecture
+# RICH architecture
 
 The core architectural pattern is **RICH** (Request, Input, Command, Handler), provided by the [`1tomany/rich-bundle`](https://github.com/1tomany/rich-bundle) library. It is designed for modern Symfony installations (v7.2+), and works for both web and console applications.
 

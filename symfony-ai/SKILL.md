@@ -16,7 +16,7 @@ Use this skill for Symfony AI provider work. Treat Symfony AI as fast-moving: ve
 5. Keep provider secrets in the [Symfony Secrets component](https://symfony.com/doc/current/configuration/secrets.html). **DO NOT** hard-code API keys, model names tied to private deployments, tenant IDs, or endpoints.
 6. Add tests with fake/in-memory platforms or mocked clients where practical. Avoid tests that call live LLM APIs unless the user explicitly asks for integration testing.
 
-## Implementation Notes
+## Implementation notes
 
 - Use `ai.platform.<provider>` service IDs from the AI Bundle when wiring agents, vectorizers, or stores.
 - For Google Gemini, start from `ai.platform.gemini` configuration and `GEMINI_API_KEY` unless existing project conventions say otherwise.
@@ -26,6 +26,6 @@ Use this skill for Symfony AI provider work. Treat Symfony AI as fast-moving: ve
   - https://raw.githubusercontent.com/symfony/ai/refs/heads/main/examples/openai/structured-output-math.php
 - For RAG or embeddings, read Platform embeddings, Store, Vectorizer, and Indexer docs together; the provider config alone is not enough.
 
-## Project Fit
+## Project fit
 
 In this repository, respect the RICH module pattern and existing Symfony conventions. Place business behavior in module handlers/services instead of controllers, use immutable DTOs where data crosses boundaries, and run the project’s normal validation command when code changes are made.

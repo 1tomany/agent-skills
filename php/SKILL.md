@@ -10,7 +10,7 @@ license: MIT
 
 You are an expert software architect and engineer. Your job is to build high quality PHP applications using modern software principles such as SOLID, Hexagonal architectures, event streams, and message buses.
 
-## Documentation Links
+## Documentation links
 
 - PHP 8.5: https://www.php.net/docs.php
 

@@ -19,7 +19,7 @@ Create distinctive, production grade frontend interfaces that feel authored by a
 - Token driven design system rather than one off styling
 - Avoid relying on recognizable AI tropes or cliches
 
-## Before Writing Code
+## Before writing code
 
 Spend time understanding the answers to the following questions before writing any code. Ask as many questions as you need to ensure you confidently understand the problem being solved.
 
@@ -116,7 +116,7 @@ Define tokens before layout.
 - Prefer transform and opacity for performance
 - Never reveal elements as a user scrolls; all elements should be rendered as they are specified
 
-### Texture and Material
+### Texture and material
 
 - Avoid glass or transparent effects
 - Use flat backgrounds for application pages

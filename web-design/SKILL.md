@@ -15,8 +15,7 @@ Create distinctive, production grade frontend interfaces that feel authored by a
 - Performant landing, marketing, and application pages
 - Distinct visual identity with a clear narrative and signature element
 - Production grade functionality with complete states and responsive behavior
-- Accessibility by default with WCAG AA intent
-- Token driven design system rather than one off styling
+- Focus on using standard Tailwind styles
 - Avoid relying on recognizable AI tropes or cliches
 
 ## Before writing code
@@ -26,65 +25,6 @@ Spend time understanding the answers to the following questions before writing a
 ### Purpose
 
 **Goal:** Answer: What problem does this interface solve and who uses it?
-
-## Design tokens
-
-Define tokens before layout.
-
-```css
-:root {
-  /* Color */
-  --color-bg:;
-  --color-surface:;
-  --color-text:;
-  --color-muted:;
-  --color-accent:;
-  --color-focus:;
-  --color-success:;
-  --color-warning:;
-  --color-danger:;
-
-  /* Typography */
-  --font-display:;
-  --font-body:;
-  --font-mono:;
-  --text-xs:;
-  --leading-xs:;
-  --text-sm:;
-  --leading-sm:;
-  --text-base:;
-  --leading-base:;
-  --text-lg:;
-  --leading-lg:;
-  --text-xl:;
-  --leading-xl:;
-  --text-2xl:;
-  --leading-2xl:;
-
-  /* Spacing */
-  --space-1:;
-  --space-2:;
-  --space-3:;
-  --space-4:;
-  --space-6:;
-  --space-8:;
-
-  /* Radius and Shadow */
-  --radius-sm:;
-  --radius-md:;
-  --radius-lg:;
-  --shadow-sm:;
-  --shadow-md:;
-  --shadow-lg:;
-
-  /* Motion */
-  --duration-fast:;
-  --duration-base:;
-  --duration-slow:;
-  --ease-out:;
-  --ease-spring:;
-}
-```
 
 ## Aesthetics Rules
 
@@ -125,27 +65,28 @@ Define tokens before layout.
 
 ### Interaction states
 
-Every interactive element must implement:
+Every interactive element should implement (if applicable):
 
 - Default state
 - Hover state
 - Active or pressed state
-- Disabled state
-- Loading state (if applicable)
-- Error state (if applicable)
+- Loading state
+- Error state
+
+A focus state should only be added to form inputs and buttons. Avoid focus states on links and icons.
 
 ## Production Requirements
 
 ### Accessibility
 
 - Semantic HTML structure
-- ARIA rarely and only where necessary
+- ARIA used very sparingly only only where absolutely necessary
 - Keyboard navigation for all interactive elements
 - Form validation messaging where forms exist
 
 ### Responsive
 
-- Minimum three breakpoints
+- At least two breakpoints: one for mobile and one for desktop browsers
 - Narrative and hierarchy preserved across sizes
 - Touch targets at least 44 pixels on mobile
 
@@ -185,10 +126,8 @@ Reject output if any are true:
 
 Reject output if any are true:
 
-- Inter plus purple gradient plus rounded cards plus generic icons
 - Generic chatbot bubbles with no branded concept
 - Default Tailwind appearance with minimal tokenization
-- Missing focus states or keyboard access
 - No error or loading states
 - Marketplace template resemblance
 - Visual polish without usability completeness

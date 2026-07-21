@@ -1,6 +1,7 @@
 ---
 name: symfony-ai
 description: Use when working with Symfony AI documentation or implementing integrations with LLM providers such as OpenAI, Anthropic, or Google Gemini embeddings, structured output, tool calling, streaming, multimodal input, or AI Bundle platform/agent configuration.
+license: MIT
 ---
 
 # Symfony AI

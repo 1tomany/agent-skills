@@ -1,0 +1,6 @@
+interface:
+  display_name: "RICH"
+  short_description: "Manage RICH modules in components in modern Symfony applications"
+
+policy:
+  allow_implicit_invocation: true

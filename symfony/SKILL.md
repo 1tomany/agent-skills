@@ -1,6 +1,6 @@
 ---
 name: symfony
-description: Use when working with modern Symfony applications. This skill outlines coding standards and important conventions.
+description: Use when working with web and console applications that use modern versions of the Symfony PHP framework
 license: MIT
 ---
 

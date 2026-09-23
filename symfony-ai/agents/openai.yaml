@@ -1,5 +1,5 @@
 interface:
-  display_name: "symfony-ai"
+  display_name: "Symfony AI"
   short_description: "Easy reference to the Symfony AI documentation"
 
 policy:

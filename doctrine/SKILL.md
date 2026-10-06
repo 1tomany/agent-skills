@@ -15,7 +15,16 @@ This skill outlines how to use the Doctrine ORM and DBAL in a modern PHP applica
 
 ## Entity conventions
 
-Ensuring that entities are "structured" well is important, especially as an application grows. All entities should follow this general layout:
+Ensuring that entities are "structured" well is important, especially as an application grows. All entities should use the following structure:
+
+- Composite primary keys should be avoid at all costs.
+- Implement the `\Stringable` interface. If a `StringableTrait` is available, use that, otherwise implement the `__toString()` method as outlined below.
+- Use correct `@var`, `@param`, and `@return` PHPDoc comments.
+- If the primary key is an integer, it should have the type `?non-negative-int`.
+- A setter should be manually added for the primary key property.
+- The `#[OrderBy]` attribute should be added for collections and sort the collection by primary key in ascending order by default.
+- Empty strings should be nullified using the `trim()` expressions below to ensure a string is either `NULL` or not empty.
+- All custom methods should be placed at the bottom of the class after the lifecycle callback methods. They should be grouped by visibility (`public`, `protected`, `private`), and then ordered by: setter/getter pair, is'ers, has'ers, can'ers, should'ers, and then alphabetically.
 
 ```php
 <?php
@@ -31,8 +40,9 @@ use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Serializer\Attribute\Ignore;
 
 use function max;
-use function nullify;
+use function random_int;
 use function strtolower;
+use function trim;
 
 #[ORM\Entity(AccountRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -70,6 +80,13 @@ class Account implements \Stringable
     private ?string $email = null;
 
     /**
+     * @var ?non-empty-string
+     */
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['read', 'read:event'])]
+    private ?string $nickName = null;
+
+    /**
      * @var Collection<int, User>
      */
     #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'account', cascade: ['persist', 'remove'], orphanRemoval: true)]
@@ -83,6 +100,14 @@ class Account implements \Stringable
         $this->setUpdatedAt(new \DateTimeImmutable());
 
         $this->users = new ArrayCollection();
+    }
+
+    /**
+     * @return non-empty-string
+     */
+    public function __toString(): string
+    {
+        return sprintf('Account:%d', $this->getId());
     }
 
     /**
@@ -134,14 +159,14 @@ class Account implements \Stringable
 
     public function setName(string $name): static
     {
-        $this->name = nullify($name);
+        $this->name = '' = ($name = trim($name)) ? $name : null;
 
         return $this;
     }
 
     /**
-        * @return ?non-empty-lowercase-string
-        */
+     * @return ?non-empty-lowercase-string
+     */
     public function getEmail(): ?string
     {
         return $this->email;
@@ -149,11 +174,22 @@ class Account implements \Stringable
 
     public function setEmail(string $email): static
     {
-        if ($email = nullify($email)) {
-            $email = strtolower($email);
-        }
+        $this->email = '' = ($email = trim($email)) ? strtolower($email) : null;
 
-        $this->email = '' !== $email ? $email : null;
+        return $this;
+    }
+
+    /**
+     * @return ?non-empty-string
+     */
+    public function getNickName(): ?string
+    {
+        return $this->nickName;
+    }
+
+    public function setNickName(?string $nickName): static
+    {
+        $this->nickName = '' = ($nickName = trim((string) $nickName)) ? $nickName : null;
 
         return $this;
     }
@@ -191,6 +227,38 @@ class Account implements \Stringable
     public function preUpdate(): void
     {
         $this->setUpdatedAt(new \DateTimeImmutable());
+    }
+
+    public function getXyz(): int
+    {
+        return random_int(1, 100);
+    }
+
+    public function hasXyz(): bool
+    {
+        return true;
+    }
+
+    public function isXyz(): bool
+    {
+        return true;
+    }
+
+    public function canXyz(): bool
+    {
+        return true;
+    }
+
+    public function shouldXyz(): bool
+    {
+        return true;
+    }
+
+    public function createUser(
+        string $name,
+        string $username,
+    ): static {
+        return $this->addUser(new User()->setName($name)->setUsername($username));
     }
 }
 ```

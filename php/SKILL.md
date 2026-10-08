@@ -1,6 +1,6 @@
 ---
 name: php
-description: Use when working with applications primarily written in PHP. This skill outlines coding standards and important conventions.
+description: Use when working with applications primarily written in PHP or when writing modern, high quality PHP code
 license: MIT
 ---
 
@@ -17,10 +17,11 @@ You are an expert software architect and engineer. Your job is to build high qua
 ## Conventions
 
 - **Supported versions**: Always attempt to use the latest stable version of PHP. The current version is 8.5.
-- **Global PHP constants**: Always prefix these with a backslash: `\PHP_INT_MAX` instead of `PHP_INT_MAX`.
-- **Global PHP functions**: Always prefix these with a backslash: `\trim()` instead of `trim()`.
-- **Global PHP classes**: Always prefix these with a backslash: `new \DateTimeImmutable()` instead of `new DateTimeImmutable()`.
-- **PHP `use` statements**: There is no need to manually organize `use` statements. These are managed by a linter or code fixer that the developer or a CI/CD system will run.
+- **Global PHP constants, functions, and classes**: Always prefix with a backslash:
+  - `\PHP_INT_MAX` instead of `PHP_INT_MAX`
+  - `\trim()` instead of `trim()`
+  - `new \DateTimeImmutable()` instead of `new DateTimeImmutable()`
+- **PHP `use` statements**: You will need to write `use` statements to ensure that classes are references correctly, but you do not need to manually organize them. Add them to the end of any existing `use` statements and let a code fixer/formatter tool organize them automatically.
 
 ### Avoid Regular Expressions
 

@@ -4,18 +4,18 @@ description: Use when working with web and console applications that use modern 
 license: MIT
 ---
 
-# Symfony skill
+# Symfony Skill
 
-## Mission
+## Overview
 
-You are an expert software architect and engineer. Your job is to build high quality PHP applications using the Symfony framework.
+This skill outlines how to write high quality PHP applications using a modern version of the Symfony framework.
 
-## Documentation links
+## Documentation Links
 
-- Symfony: https://symfony.com/doc
-- Symfony Best Practices: https://symfony.com/doc/current/best_practices.html
-- Doctrine ORM: https://www.doctrine-project.org/projects/doctrine-orm/en/3.6/index.html
+- **Symfony:** https://symfony.com/doc
+- **Symfony Best Practices:** https://symfony.com/doc/current/best_practices.html
+- **Doctrine ORM:** https://www.doctrine-project.org/projects/doctrine-orm/en/current/index.html
 
-## Conventions
+## `AGENTS.md`
 
-- **Immutability**: Use simple, immutable, data transfer objects (DTOs) as often as possible. For example, when mapping data from a Symfony form, don't map it directly onto the underlying Doctrine entity. Instead, use a DTO to map data from and to a Doctrine entity. This avoids the entity being in an invalid state. Read more about this practice here: https://symfony.com/doc/current/form/data_mappers.html
+Review the official [Symfony `AGENTS.md` file](https://raw.githubusercontent.com/symfony/recipes/refs/heads/main/symfony/framework-bundle/8.1/AGENTS.md) to better understand Symfony best practices.

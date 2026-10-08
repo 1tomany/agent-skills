@@ -4,9 +4,11 @@ description: Manages RICH domains in modern Symfony applications. Use when asked
 license: MIT
 ---
 
-# RICH architecture
+# RICH Architecture Skill
 
-The core architectural pattern is **RICH** (Request, Input, Command, Handler), provided by the [`1tomany/rich-bundle`](https://github.com/1tomany/rich-bundle) library. It is designed for modern Symfony installations (v7.2+), and works for both web and console applications.
+## Overview
+
+The core architectural pattern is **RICH** (Request, Input, Command, Handler), provided by the [`1tomany/rich-bundle`](https://github.com/1tomany/rich-bundle) library. It is designed for modern Symfony installations (versions 7.2 and higher), and works for both web and console applications.
 
 First, read the [RICH Bundle documentation](https://raw.githubusercontent.com/1tomany/rich-bundle/refs/heads/master/README.md) and commit it to memory to better understand the overall design pattern. Below is a brief summary of the request flow:
 
